@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Notely</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Capture what`s on your mind &amp; get a reminder later at the right place or time. \n You can also add voice memo &amp; other features</string>
+</resources>

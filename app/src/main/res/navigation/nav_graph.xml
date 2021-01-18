@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/nav_graph"
+            app:startDestination="@id/startFragment"
+>
+    <fragment android:id="@+id/homeFragment"
+              android:name="com.example.notely.ui.HomeFragment"
+              android:label="Notely"
+              tools:layout="@layout/fragment_home"
+    >
+        <action
+                android:id="@+id/actionAddNote"
+                app:destination="@id/addNoteFragment"
+                app:enterAnim="@anim/slide_in_top"
+                app:exitAnim="@anim/slide_out_bottom"
+                app:popEnterAnim="@anim/slide_in_left"
+                app:popExitAnim="@anim/slide_out_right"
+                app:popUpTo="@id/nav_graph"
+                app:popUpToInclusive="true" />
+        <action
+                android:id="@+id/action_homeFragment_to_updateNoteFragment"
+                app:destination="@id/updateNoteFragment"
+                app:enterAnim="@anim/alerter_slide_in_from_bottom"
+                app:exitAnim="@anim/alerter_slide_out_to_bottom"
+                app:popEnterAnim="@anim/alerter_slide_out_to_right"
+                app:popExitAnim="@anim/alerter_slide_in_from_left" />
+    </fragment>
+    <fragment
+            android:id="@+id/addNoteFragment"
+            android:name="com.example.notely.ui.AddNoteFragment"
+            android:label="New Note"
+            tools:layout="@layout/fragment_add_note">
+        <action
+                android:id="@+id/actionSaveNote"
+                app:destination="@id/homeFragment"
+                app:popUpTo="@id/nav_graph"
+                app:popUpToInclusive="true" />
+        <deepLink
+                android:id="@+id/deepLink"
+                app:uri="com.example.notely/addNote" />
+    </fragment>
+    <fragment
+            android:id="@+id/updateNoteFragment"
+            android:name="com.example.notely.ui.UpdateNoteFragment"
+            android:label="Edit Note"
+            tools:layout="@layout/fragment_update_note">
+        <argument
+                android:name="note"
+                app:argType="com.example.notely.db.Note" />
+        <action
+                android:id="@+id/action_updateNoteFragment_to_homeFragment"
+                app:destination="@id/homeFragment"
+                app:popUpToInclusive="true"
+                app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+            android:id="@+id/startFragment"
+            android:name="com.example.notely.ui.StartFragment"
+            android:label=" "
+            tools:layout="@layout/fragment_start">
+        <action
+                android:id="@+id/action_startFragment_to_homeFragment"
+                app:destination="@id/homeFragment"
+                app:popUpToInclusive="true"
+                app:popUpTo="@+id/nav_graph" />
+    </fragment>
+
+</navigation>

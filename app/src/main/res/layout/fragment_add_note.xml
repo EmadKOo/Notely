@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+                name="Font"
+                type="com.example.notely.helper.Fonts" />
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ui.AddNoteFragment"
+            android:background="@drawable/background"
+            app:navGraph="@navigation/nav_graph">
+
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/titleEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:hint="Title"
+                android:textSize="20sp"
+                android:typeface="@{Font.newsCycle}"
+                android:padding="10dp"/>
+
+        <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/descriptionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/transparent"
+                android:hint="Description"
+                android:typeface="@{Font.newsCycle}"
+                android:layout_below="@id/titleEditText"
+                android:padding="10dp"/>
+
+        <Button
+                android:id="@+id/btnSaveNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="16dp"
+                android:background="@drawable/round"
+                android:text="Save"
+                android:drawablePadding="10dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@android:color/white"
+                android:drawableLeft="@drawable/ic_save"
+                android:typeface="@{Font.audioWide}"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                />
+    </RelativeLayout>
+</layout>

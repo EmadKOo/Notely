@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+                name="currentNote"
+                type="com.example.notely.db.Note" />
+        <variable
+                name="Font"
+                type="com.example.notely.helper.Fonts" />
+    </data>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/holder_background"
+            android:padding="15dp">
+
+        <ImageView
+                android:id="@+id/iconHolder"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@{currentNote.remainder? @drawable/bell: @drawable/notes }"
+                android:padding="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+
+                />
+        <TextView
+                android:id="@+id/titleNotesHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{currentNote.title}"
+                android:typeface="@{Font.newsCycle}"
+                android:textColor="@android:color/black"
+                android:layout_toRightOf="@+id/iconHolder"
+                android:padding="6dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+                android:id="@+id/noteTimeHolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{currentNote.noteDate}"
+                android:typeface="@{Font.montserratAlternates}"
+                android:layout_below="@id/titleNotesHolder"
+                android:layout_toRightOf="@id/iconHolder"
+                android:textColor="@color/colorGray"/>
+
+        <ImageView
+                android:id="@+id/noteImageHolder"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@id/noteTimeHolder"
+                android:layout_marginTop="20dp"
+                android:visibility="gone"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{currentNote.note}"
+                android:typeface="@{Font.newsCycle}"
+                android:layout_below="@+id/noteImageHolder"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp" />
+
+    </RelativeLayout>
+</layout>
