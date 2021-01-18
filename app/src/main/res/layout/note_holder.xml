@@ -21,13 +21,12 @@
                 android:id="@+id/iconHolder"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
-                android:src="@{currentNote.remainder? @drawable/bell: @drawable/notes }"
+                android:background="@{currentNote.remainder? @drawable/green_circle : @drawable/orange_circle }"
+                android:src="@{currentNote.remainder? @drawable/ic_notify : @drawable/ic_update }"
                 android:padding="6dp"
                 android:layout_marginTop="6dp"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-
-                />
+                android:layout_alignParentTop="true" />
         <TextView
                 android:id="@+id/titleNotesHolder"
                 android:layout_width="match_parent"
