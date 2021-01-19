@@ -111,7 +111,8 @@ class UpdateNoteFragment : Fragment() {
         val notifierRequest = OneTimeWorkRequestBuilder<NotifierWorker>()
             .setInputData(data)
             .setConstraints(constraints)
-            .setInitialDelay(days, TimeUnit.DAYS)
+            .setInitialDelay(days, TimeUnit.SECONDS)
+            //.setInitialDelay(days, TimeUnit.DAYS)
             .build()
 
         WorkManager.getInstance(requireContext()).enqueue(notifierRequest)
@@ -137,7 +138,8 @@ class UpdateNoteFragment : Fragment() {
                 Log.d("TAG", "calculateDifference: Time " + sdf.format(Date().time))
                 Log.d("TAG", "calculateDifference: " + sdf.format(cal.time))
                 note.remainderTime = getDaysDifference(sdf.format(Date().time), sdf.format(cal.time)).toLong()
-                initWorker(getDaysDifference(sdf.format(Date().time), sdf.format(cal.time)).toLong())
+                initWorker(1)
+               // initWorker(getDaysDifference(sdf.format(Date().time), sdf.format(cal.time)).toLong())
 
             },
             year,
