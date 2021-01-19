@@ -2,13 +2,13 @@
 
   ## Kotlin Android Application to save user notes.
   
-    ## • Room Database
-    ## • Navigation Component
-    ## • RXJava
-    ## • MVVM
-    ## • Work Manager
-    ## • Databinding
-    • Databinding
+     • Room Database
+     • Navigation Component
+     • RXJava
+     • MVVM
+     • Work Manager
+     • Databinding
+
   
   
 <p align="center">
