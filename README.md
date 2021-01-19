@@ -6,7 +6,6 @@
      • Room Database
      • Navigation Component
      • RXJava
-     • MVVM
      • Work Manager
      • Databinding
 
