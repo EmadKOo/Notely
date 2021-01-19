@@ -1,6 +1,7 @@
 # Notely
 
   ## Kotlin Android Application to save user notes.
+  ###### Capture what\`s on your mind & get a reminder later at the right place or time. You can also add voice memo & other features
   
      • Room Database
      • Navigation Component
