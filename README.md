@@ -8,6 +8,7 @@
     ## • MVVM
     ## • Work Manager
     ## • Databinding
+    • Databinding
   
   
 <p align="center">
